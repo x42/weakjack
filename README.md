@@ -1,7 +1,7 @@
 Weak-JACK
 =========
 
-This small library abstracts the jackaudio.org Application Binary Interface.
+This small library abstracts the [JACK](http://jackaudio.org) Application Binary Interface.
 
 Background and Motivation
 -------------------------
@@ -58,9 +58,18 @@ implementation is also part of libjack and will not be available.
 The dummy implementation for the ringbuffer API is safe (read, writes are ignored and return failure
 or zero-bytes length), but if your application depends on it to work, you're out of luck :)
 
+The function wrappers in `weak_libjack.def` were collected pragmatically it's quite possible that
+some JACK API calls have been missed. If you application fails to link (without -ljack), please report
+at https://github.com/x42/weakjack/issues
+
+License
+-------
+
+GNU General Public License version 2 (or later).
 
 Alternatives
 ------------
 
-An alternative implementation that wraps jack completely (incl headers) can be found at
+An alternative more liberally licensed implementation that abstracts and wraps jack completely
+(incl headers) can be found at
 https://github.com/falkTX/Carla/tree/master/source/modules/jackbridge
