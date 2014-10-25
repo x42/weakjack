@@ -9,7 +9,7 @@ Background and Motivation
 The jack shared library needs to be installed system-wide (for all jack applications
 to share), it can not be part of an application itself.
 
-JACK developers take great care to not break binary compatibility of libjack. An 
+JACK developers take great care to not break binary compatibility of libjack. An
 application compiled with one version of jack will work with all future versions
 of jack. However, this only works well on GNU/Linux, BSD and to some extend on OSX.
 
@@ -70,6 +70,9 @@ GNU General Public License version 2 (or later).
 Alternatives
 ------------
 
-An alternative more liberally licensed implementation that abstracts and wraps jack completely
+An alternative, more liberally licensed, implementation that abstracts and wraps jack completely
 (incl headers) can be found at
-https://github.com/falkTX/Carla/tree/master/source/modules/jackbridge
+https://github.com/falkTX/Carla/tree/master/source/modules/jackbridge (C++ only).
+
+A variant for python bindings is also provided by falkTX:
+https://github.com/falkTX/Cadence/blob/master/src/jacklib.py
