@@ -31,14 +31,14 @@ int have_libjack (void) {
 #include <string.h>
 #include <assert.h>
 
-#ifdef PLATFORM_WINDOWS
+#ifdef _WIN32
 #include <windows.h>
 #else
 #include <dlfcn.h>
 #endif
 
 static void* lib_open(const char* const so) {
-#ifdef PLATFORM_WINDOWS
+#ifdef _WIN32
 	return (void*) LoadLibraryA(so);
 #else
 	return dlopen(so, RTLD_NOW|RTLD_LOCAL);
@@ -46,14 +46,14 @@ static void* lib_open(const char* const so) {
 }
 
 static void* lib_symbol(void* const lib, const char* const sym) {
-#ifdef PLATFORM_WINDOWS
+#ifdef _WIN32
 	return (void*) GetProcAddress((HMODULE)lib, sym);
 #else
 	return dlsym(lib, sym);
 #endif
 }
 
-#ifdef COMPILER_MSVC
+#if _MSC_VER && !__INTEL_COMPILER
 typedef void * pvoid_t;
 #define MAPSYM(SYM, FAIL) _j._ ## SYM = (func_t)lib_symbol(lib, "jack_" # SYM); \
 	if (!_j._ ## SYM) err |= FAIL;
@@ -100,7 +100,7 @@ static void init_weak_jack(void)
 	if (!lib) {
 		lib = lib_open("/usr/local/lib/libjack.dylib");
 	}
-#elif (defined PLATFORM_WINDOWS)
+#elif (defined _WIN32)
 # ifdef __x86_64__
 	lib = lib_open("libjack64.dll");
 # else
