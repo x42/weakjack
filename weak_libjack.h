@@ -151,10 +151,16 @@ int have_libjack(void);
 #define jack_drop_real_time_scheduling      WJACK_drop_real_time_scheduling
 #define jack_client_stop_thread             WJACK_client_stop_thread
 #define jack_client_kill_thread             WJACK_client_kill_thread
+#define jack_set_thread_creator             WJACK_set_thread_creator
 
 #define jack_client_open                    WJACK_client_client_openXXX
 
+#ifndef NO_JACK_METADATA
 /* <jack/metadata.h> */
+#define jack_get_uuid_for_client_name       WJACK_get_uuid_for_client_name
+#define jack_get_client_name_by_uuid        WJACK_get_client_name_by_uuid
+#define jack_port_uuid                      WJACK_port_uuid
+
 #define jack_set_property                   WJACK_set_property
 #define jack_get_property                   WJACK_get_property
 #define jack_free_description               WJACK_free_description
@@ -164,6 +170,7 @@ int have_libjack(void);
 #define jack_remove_properties              WJACK_remove_properties
 #define jack_remove_all_properties          WJACK_remove_all_properties
 #define jack_set_property_change_callback   WJACK_set_property_change_callback
+#endif
 
 #endif // end USE_WEAK_JACK
 
@@ -173,7 +180,10 @@ int have_libjack(void);
 #include <jack/midiport.h>
 #include <jack/session.h>
 #include <jack/thread.h>
+
+#ifndef NO_JACK_METADATA
 #include <jack/metadata.h>
+#endif
 
 #ifdef USE_WEAK_JACK
 
