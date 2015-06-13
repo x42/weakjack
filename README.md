@@ -72,7 +72,8 @@ Alternatives
 
 An alternative, more liberally licensed, implementation that abstracts and wraps jack completely
 (incl headers) can be found at
-https://github.com/falkTX/Carla/tree/master/source/modules/jackbridge (C++ only).
+https://github.com/falkTX/Carla/tree/master/source/jackbridge (C++ only),
+and a jack2 specific version at https://github.com/sletz/jack2/blob/master/common/JackWeakAPI.c
 
 A variant for python bindings is also provided by falkTX:
 https://github.com/falkTX/Cadence/blob/master/src/jacklib.py
