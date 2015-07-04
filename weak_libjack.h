@@ -97,6 +97,7 @@ int have_libjack(void);
 #define jack_port_by_name                   WJACK_port_by_name
 #define jack_port_by_id                     WJACK_port_by_id
 #define jack_port_set_name                  WJACK_port_set_name
+#define jack_port_get_aliases               WJACK_port_get_aliases
 #define jack_port_disconnect                WJACK_port_disconnect
 #define jack_port_register                  WJACK_port_register
 #define jack_port_unregister                WJACK_port_unregister
