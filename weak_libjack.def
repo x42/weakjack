@@ -144,4 +144,9 @@ JPFUN(0, int,            remove_all_properties, (jack_client_t* c), (c), -1)
 JPFUN(0, int,            set_property_change_callback, (jack_client_t *c, JackPropertyChangeCallback s, void *a), (c,s,a), -1)
 #endif
 
+/* <jack/statistics.h> */
+JCFUN(1, float,          get_max_delayed_usecs, 0.0)
+JCFUN(1, float,          get_xrun_delayed_usecs, 0.0)
+JVFUN(0,                 reset_max_delayed_usecs, (jack_client_t *c), (c),)
+
 #endif // end USE_WEAK_JACK

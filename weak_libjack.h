@@ -175,6 +175,11 @@ int have_libjack(void);
 #define jack_set_property_change_callback   WJACK_set_property_change_callback
 #endif
 
+/* <jack/statistics.h> */
+#define jack_get_max_delayed_usecs WJACK_get_max_delayed_usecs
+#define jack_get_xrun_delayed_usecs WJACK_get_xrun_delayed_usecs
+#define jack_reset_max_delayed_usecs WJACK_reset_max_delayed_usecs
+
 #endif // end USE_WEAK_JACK
 
 #include <jack/jack.h>
