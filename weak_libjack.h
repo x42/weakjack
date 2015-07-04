@@ -98,6 +98,7 @@ int have_libjack(void);
 #define jack_port_by_id                     WJACK_port_by_id
 #define jack_port_set_name                  WJACK_port_set_name
 #define jack_port_get_aliases               WJACK_port_get_aliases
+#define jack_port_rename                    WJACK_port_rename
 #define jack_port_disconnect                WJACK_port_disconnect
 #define jack_port_register                  WJACK_port_register
 #define jack_port_unregister                WJACK_port_unregister
@@ -192,6 +193,9 @@ int have_libjack(void);
 #ifndef NO_JACK_METADATA
 #include <jack/metadata.h>
 #endif
+
+// prototype for function currently only available in jack1 headers
+int jack_port_rename (jack_client_t* client, jack_port_t *port, const char *port_name);
 
 #ifdef USE_WEAK_JACK
 
