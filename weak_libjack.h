@@ -97,6 +97,7 @@ int have_libjack(void);
 #define jack_port_by_name                   WJACK_port_by_name
 #define jack_port_by_id                     WJACK_port_by_id
 #define jack_port_set_name                  WJACK_port_set_name
+#define jack_port_get_aliases               WJACK_port_get_aliases
 #define jack_port_disconnect                WJACK_port_disconnect
 #define jack_port_register                  WJACK_port_register
 #define jack_port_unregister                WJACK_port_unregister
@@ -173,6 +174,11 @@ int have_libjack(void);
 #define jack_remove_all_properties          WJACK_remove_all_properties
 #define jack_set_property_change_callback   WJACK_set_property_change_callback
 #endif
+
+/* <jack/statistics.h> */
+#define jack_get_max_delayed_usecs WJACK_get_max_delayed_usecs
+#define jack_get_xrun_delayed_usecs WJACK_get_xrun_delayed_usecs
+#define jack_reset_max_delayed_usecs WJACK_reset_max_delayed_usecs
 
 #endif // end USE_WEAK_JACK
 
