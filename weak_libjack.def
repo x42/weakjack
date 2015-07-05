@@ -111,6 +111,8 @@ JPFUN(1, size_t,         ringbuffer_write_space, (const jack_ringbuffer_t *rb), 
 JPFUN(1, size_t,         ringbuffer_read, (jack_ringbuffer_t *rb, char *d, size_t c), (rb,d,c), 0)
 JPFUN(1, size_t,         ringbuffer_write, (jack_ringbuffer_t *rb, const char *s, size_t c), (rb,s,c), 0)
 JPFUN(0, int,            ringbuffer_mlock, (jack_ringbuffer_t *rb), (rb), 0)
+JVFUN(0,                 ringbuffer_get_read_vector, (const jack_ringbuffer_t *rb, jack_ringbuffer_data_t *v), (rb,v), if (v) {v->buf=NULL; v->len=0;} )
+JVFUN(0,                 ringbuffer_get_write_vector, (const jack_ringbuffer_t *rb, jack_ringbuffer_data_t *v), (rb,v), if (v) {v->buf=NULL; v->len=0;} )
 
 /* <jack/thread.h> */
 JCFUN(0, int,            client_real_time_priority, 0)

@@ -146,6 +146,8 @@ int have_libjack(void);
 #define jack_ringbuffer_read                WJACK_ringbuffer_read
 #define jack_ringbuffer_write               WJACK_ringbuffer_write
 #define jack_ringbuffer_mlock               WJACK_ringbuffer_mlock
+#define jack_ringbuffer_get_read_vector     WJACK_ringbuffer_get_read_vector
+#define jack_ringbuffer_get_write_vector    WJACK_ringbuffer_get_write_vector
 
 /* <jack/thread.h> */
 #define jack_client_real_time_priority      WJACK_client_real_time_priority
