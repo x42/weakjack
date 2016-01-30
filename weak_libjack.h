@@ -74,6 +74,7 @@ int have_libjack(void);
 #define jack_set_xrun_callback              WJACK_set_xrun_callback
 #define jack_set_latency_callback           WJACK_set_latency_callback
 #define jack_set_error_function             WJACK_set_error_function
+#define jack_set_info_function             WJACK_set_info_function
 
 #define jack_activate                       WJACK_activate
 #define jack_deactivate                     WJACK_deactivate
