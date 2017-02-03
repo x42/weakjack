@@ -32,6 +32,8 @@ JVFUN(1,                 set_info_function, (void (*f)(const char *)), (f),)
 JCFUN(1, int,            activate, -1)
 JCFUN(1, int,            deactivate, -1)
 
+JPFUN(1, int,            client_name_size, (), (), 32)
+
 JCFUN(1, jack_nframes_t, get_sample_rate, 0)
 JCFUN(1, jack_nframes_t, get_buffer_size, 0)
 JPFUN(1, jack_nframes_t, frames_since_cycle_start, (const jack_client_t *c), (c), 0)
