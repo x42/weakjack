@@ -94,6 +94,7 @@ int have_libjack(void);
 #define jack_port_short_name                WJACK_port_short_name
 #define jack_port_flags                     WJACK_port_flags
 #define jack_port_is_mine                   WJACK_port_is_mine
+#define jack_port_connected                 WJACK_port_connected
 #define jack_get_ports                      WJACK_get_ports
 #define jack_port_name_size                 WJACK_port_name_size
 #define jack_port_type_size                 WJACK_port_type_size
