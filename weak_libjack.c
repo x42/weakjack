@@ -92,8 +92,9 @@ static struct WeakJack {
 } _j;
 
 static int _status = -1;
-
+#if !defined(_MSC_VER)
 __attribute__((constructor))
+#endif
 static void init_weak_jack(void)
 {
 	void* lib;
