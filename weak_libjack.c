@@ -111,7 +111,7 @@ static void init_weak_jack(void)
 		lib = lib_open("/usr/local/lib/libjack.dylib");
 	}
 #elif (defined _WIN32)
-# ifdef __x86_64__
+# if defined(__x86_64__) || defined(_M_X64) || defined(__amd64__)
 	lib = lib_open("libjack64.dll");
 # else
 	lib = lib_open("libjack.dll");
