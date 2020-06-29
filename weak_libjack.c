@@ -53,7 +53,7 @@ static void* lib_symbol(void* const lib, const char* const sym) {
 #endif
 }
 
-#if _MSC_VER && !__INTEL_COMPILER
+#if defined _MSC_VER  && ! defined __INTEL_COMPILER
 typedef void * pvoid_t;
 #define MAPSYM(SYM, FAIL) _j._ ## SYM = (func_t)lib_symbol(lib, "jack_" # SYM); \
 	if (!_j._ ## SYM) err |= FAIL;
@@ -92,7 +92,7 @@ static struct WeakJack {
 } _j;
 
 static int _status = -1;
-#if !defined(_MSC_VER)
+#if !defined _MSC_VER || defined __INTEL_COMPILER
 __attribute__((constructor))
 #endif
 static void init_weak_jack(void)
