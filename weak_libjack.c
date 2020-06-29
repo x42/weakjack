@@ -53,7 +53,7 @@ static void* lib_symbol(void* const lib, const char* const sym) {
 #endif
 }
 
-#if _MSC_VER && !__INTEL_COMPILER
+#if defined(_MSC_VER) && _MSC_VER && !__INTEL_COMPILER
 typedef void * pvoid_t;
 #define MAPSYM(SYM, FAIL) _j._ ## SYM = (func_t)lib_symbol(lib, "jack_" # SYM); \
 	if (!_j._ ## SYM) err |= FAIL;
