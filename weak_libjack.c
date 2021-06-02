@@ -110,6 +110,15 @@ static void init_weak_jack(void)
 	if (!lib) {
 		lib = lib_open("/usr/local/lib/libjack.dylib");
 	}
+	if (!lib) {
+		/* New Homebrew location */
+		lib = lib_open("/opt/homebrew/lib/libjack.dylib");
+	}
+	if (!lib) {
+		/* MacPorts location */
+		lib = lib_open("/opt/local/lib/libjack.dylib");
+	}
+
 #elif (defined _WIN32)
 # if defined(__x86_64__) || defined(_M_X64) || defined(__amd64__)
 	lib = lib_open("libjack64.dll");
