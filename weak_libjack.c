@@ -113,10 +113,16 @@ static void init_weak_jack(void)
 	if (!lib) {
 		/* New Homebrew location */
 		lib = lib_open("/opt/homebrew/lib/libjack.dylib");
+		if (lib) {
+			fprintf(stderr, "*** WEAK-JACK: using Homebrew\n");
+		}
 	}
 	if (!lib) {
 		/* MacPorts location */
 		lib = lib_open("/opt/local/lib/libjack.dylib");
+		if (lib) {
+			fprintf(stderr, "*** WEAK-JACK: using MacPorts\n");
+		}
 	}
 
 #elif (defined _WIN32)
